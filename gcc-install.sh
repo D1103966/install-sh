@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ `ls|grep gcc` = "" ]
+if [[ `ls|grep gcc` = "" ]]
 then
 	wget http://ftp.gnu.org/gnu/gcc/gcc-5.1.0/gcc-5.1.0.tar.gz
 fi
@@ -11,7 +11,7 @@ rm -rf *
 ../gcc-5.1.0/configure --build=x86_64-linux-gnu --prefix=/usr/local/lib/gcc-5.1.0 --enable-checking=release --enable-languages=c,c++,fortran --disable-multilib
 make
 make install
-if [ `cat /etc/profile | grep 'PATH=/usr/local/lib/gcc-5.1.0/bin'` = "" ]
+if [[ `cat /etc/profile | grep 'PATH=/usr/local/lib/gcc-5.1.0/bin'` = "" ]]
 then
 	echo 'export PATH=/usr/local/lib/gcc-5.1.0/bin:$PATH' >> /etc/profile
 fi
