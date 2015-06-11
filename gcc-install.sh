@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ `ls|grep gcc` = "" ]]
+if [[ `ls|grep gcc` == "" ]]
 then
 	wget http://ftp.gnu.org/gnu/gcc/gcc-5.1.0/gcc-5.1.0.tar.gz
 fi

@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ `ls|grep gawk` = "" ]
+if [ `ls|grep gawk` == "" ]
 then 
 	wget http://ftp.gnu.org/gnu/gawk/gawk-4.1.1.tar.gz
 fi
