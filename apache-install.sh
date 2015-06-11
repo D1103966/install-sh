@@ -64,7 +64,7 @@ make install
 sed -i 's/^#ServerName www.example.com:80/ServerName localhost/g' /usr/local/lib/httpd-2.4.12/conf/httpd.conf
 
 /usr/local/lib/httpd-2.4.12/bin/apachectl start                          #启动apache
-if [[ `curl localhost:80' == "<html><body><h1>It works!</h1></body></html>" ]]
+if [[ `curl -s localhost:80|grep "It works"` != "" ]]
 then
 	echo "----------------------安装成功-------------------------------------"
 	cd $dir
